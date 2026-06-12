@@ -45,8 +45,8 @@ services:
     command:
       - "--path.rootfs=/host"
     pid: host
-    volumes:
-      - /:/host:ro,rslave
+    #volumes:
+      #- /:/host:ro,rslave
     ports:
       - "9100:9100"
     restart: unless-stopped
@@ -56,7 +56,7 @@ services:
     container_name: lab-cadvisor
     privileged: true
     volumes:
-      - /:/rootfs:ro
+      #- /:/rootfs:ro
       - /var/run:/var/run:ro
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
